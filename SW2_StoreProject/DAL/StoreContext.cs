@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-//using SW2_StoreProject.Models;
+using SW2_StoreProject.Models;
 
 namespace SW2_StoreProject.DAL
 {
@@ -14,7 +14,7 @@ namespace SW2_StoreProject.DAL
             : base("StoreConnection")
         { }
 
-        
+        public DbSet<UserAccount> UserAccounts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
