@@ -141,14 +141,24 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UserAccountController.cs" />
-    <Compile Include="Models\UserAccounts.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Models\UserInfo_Manage.cs" />
+    <Compile Include="Models\IUserInfo_Manage.cs" />
+    <Compile Include="Models\UserInfo_Normal.cs" />
+    <Compile Include="Models\UserInfo_Admin.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="DAL\StoreContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AuthorizationProxySecurity.cs" />
+    <Compile Include="Security\AuthenticationProxySecurity.cs" />
+    <Compile Include="Security\AuthorizationSecurity.cs" />
+    <Compile Include="Security\AuthenticationSecurity.cs" />
+    <Compile Include="Security\EnumTypes.cs" />
+    <Compile Include="Security\IAuthorization.cs" />
+    <Compile Include="Security\IAuthentication.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -215,7 +225,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>16898</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

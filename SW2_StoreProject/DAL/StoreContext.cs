@@ -14,7 +14,7 @@ namespace SW2_StoreProject.DAL
             : base("StoreConnection")
         { }
 
-        public DbSet<UserAccount> UserAccounts { get; set; }
+        public DbSet<UserInfo> UserInfos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
