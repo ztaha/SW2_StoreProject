@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SW2_StoreProject.Security
 {
-    public interface IAhtnetication
+    public interface IAuthentication
     {
         bool validation(string email, string password);
     }

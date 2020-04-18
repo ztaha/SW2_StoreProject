@@ -7,7 +7,7 @@ using System.Web;
 
 namespace SW2_StoreProject.Security
 {
-    public class AuthenticationSecurity : IAhtnetication
+    public class AuthenticationSecurity : IAuthentication
     {
         private StoreContext db = new StoreContext();
         public bool validation(string email, string password) {

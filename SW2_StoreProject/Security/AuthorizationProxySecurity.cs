@@ -11,7 +11,7 @@ namespace SW2_StoreProject.Security
         AuthorizationSecurity authObj = new AuthorizationSecurity();
         public bool checkRight(UserInfo userInfo)
         {
-            if (userInfo.UserType == UserTypeEnum.Admin.ToString())
+            if (userInfo.UserType == UserTypeEnum.Admin.ToDescriptionString())
             {
                 return authObj.checkRight(userInfo);
             }

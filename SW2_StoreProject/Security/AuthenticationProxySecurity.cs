@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SW2_StoreProject.Security
 {
-    public class AuthenticationProxySecurity : IAhtnetication
+    public class AuthenticationProxySecurity : IAuthentication
     {
         AuthenticationSecurity authObj = new AuthenticationSecurity();
         public bool validation(string email, string password) 

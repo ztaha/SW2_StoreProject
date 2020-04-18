@@ -141,7 +141,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\IUserLogin.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Models\IUserRegisteration.cs" />
+    <Compile Include="Models\UserLogin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\UserRegisteration.cs" />
     <Compile Include="Models\UserInfo_Manage.cs" />
     <Compile Include="Models\IUserInfo_Manage.cs" />
     <Compile Include="Models\UserInfo_Normal.cs" />

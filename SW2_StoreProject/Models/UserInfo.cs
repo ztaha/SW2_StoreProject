@@ -19,6 +19,12 @@ namespace SW2_StoreProject.Models
         public string Address { get; set; }
         public bool IsLoggedIn { get; set; }
         public string UserType { get; set; }
+
+        public UserInfo() {
+            //default values
+            IsLoggedIn = false;
+            UserType = UserTypeEnum.Normal.ToDescriptionString();
+        }
         
         public void logOut() {
             UserInfo userObj = db.UserInfos.Where(p => p.ID == this.ID).FirstOrDefault();
