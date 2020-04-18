@@ -18,16 +18,27 @@ namespace SW2_StoreProject.Controllers
         private StoreContext db = new StoreContext();
 
         // GET api/UserInfo
-        public IQueryable<UserInfo> GetUserInfos(int userId)
+        public IQueryable<UserInfo> GetUserInfos(int id)
         {
+            var message = string.Format("You are not log in or not have permission to call this api.");
+
             //return db.UserInfos;
             //check if user exist
-            UserInfo userObj = db.UserInfos.Find(userId);
-            if (userObj == null)
-                return null;
+            UserInfo userObj = db.UserInfos.Find(id);
+            if (userObj == null) {                
+                HttpError err = new HttpError(message);
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound, err));
+            }
 
             IUserInfo_Manage userManage = new UserInfo_Manage();
-            return userManage.getRegisteredUsers(userObj);
+            var listUser = userManage.getRegisteredUsers(userObj);
+            if (listUser == null)
+            {
+                HttpError err = new HttpError(message);
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound, err));
+            }
+
+            return listUser;
         }
 
         // POST api/UserInfo
